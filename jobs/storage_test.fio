@@ -19,24 +19,32 @@ filename=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\fio_windows_pipeline\\re
 rw=write
 bs=128k
 stonewall
+size=1G
+filename=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\fio_windows_pipeline\\results\\testfile_seqwrite
 
 ; ---------- Test 2: Sequential Read ----------
 [seq-read]
 rw=read
 bs=128k
 stonewall
+size=1G
+filename=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\fio_windows_pipeline\\results\\testfile_seqread
 
 ; ---------- Test 3: Random Read ----------
 [rand-read]
 rw=randread
 bs=64k
 stonewall
+size=1G
+filename=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\fio_windows_pipeline\\results\\testfile_randread
 
 ; ---------- Test 4: Random Write ----------
 [rand-write]
 rw=randwrite
 bs=32k
 stonewall
+size=1G
+filename=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\fio_windows_pipeline\\results\\testfile_randwrite
 
 ; ---------- Test 5: Random Read/Write Mix ----------
 [randrw-mix]
@@ -44,3 +52,7 @@ rw=randrw
 rwmixread=70
 bs=4k
 stonewall
+size=1G
+filename=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\fio_windows_pipeline\\results\\testfile_randrw
+
+
