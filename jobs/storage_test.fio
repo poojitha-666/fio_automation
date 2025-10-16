@@ -1,0 +1,46 @@
+; FIO Job File for Windows
+; Sequential and Random workloads, ready for Jenkins automation
+
+[global]
+ioengine=windowsaio          ; Windows I/O engine
+direct=1                     ; bypass OS cache
+time_based
+runtime=30s                  ; run each test for 30 seconds
+group_reporting
+size=1G
+numjobs=1
+iodepth=4
+bs=4k
+; Use absolute path for test file to avoid Windows path issues
+filename=C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\fio_windows_pipeline\\results\\testfile
+
+; ---------- Test 1: Sequential Write ----------
+[seq-write]
+rw=write
+bs=128k
+stonewall
+
+; ---------- Test 2: Sequential Read ----------
+[seq-read]
+rw=read
+bs=128k
+stonewall
+
+; ---------- Test 3: Random Read ----------
+[rand-read]
+rw=randread
+bs=64k
+stonewall
+
+; ---------- Test 4: Random Write ----------
+[rand-write]
+rw=randwrite
+bs=32k
+stonewall
+
+; ---------- Test 5: Random Read/Write Mix ----------
+[randrw-mix]
+rw=randrw
+rwmixread=70
+bs=4k
+stonewall
